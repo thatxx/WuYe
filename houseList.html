@@ -1,0 +1,228 @@
+<!-- /*
+ * @Author: thatxx 
+ * @Date: 2017-10-11 22:47:56 
+ * @Last Modified by: thatxx
+ * @Last Modified time: 2017-10-11 23:52:07
+ */ -->
+
+ <!DOCTYPE html>
+ <html lang="zh">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <link rel="stylesheet" href="./css/font-awesome.min.css">
+     <link rel="stylesheet" href="./css/jquery-weui.min.css">
+     <link rel="stylesheet" href="./css/weui.min.css">
+     <title>房间列表</title>
+ </head>
+ <style>
+     body{
+         background-color: #fff;
+     }
+     .page-bd{
+         margin-left: 3vw;
+         margin-right: 3vw;
+         margin-top: -12vh;
+         min-height: 60vh;
+         padding: 2px 0 2px 0;
+         background-color: #fff;
+         box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+         border-radius: 3%;
+         z-index: 1;
+     }
+     .fa{
+         color: #666;
+     }
+    input{
+        text-align:center;
+    }
+    .weui-media-box__title,.weui-input,.weui-cell,.toolbar .title,.weui-panel__hd{
+        color: #344e81;
+    }
+    .weui-media-box__desc{
+        color: #8497bd;
+    }
+    .weui-loadmore__tips{
+        color: #888;
+    }
+    .weui-flex{
+        padding: 2vh 0 2vh 0;
+        background-color: #fff;
+    }
+    .weui-panel{
+        margin-top: 0;
+    }
+    .weui-media-box__thumb{
+        height: 100%;
+        width: auto;
+    }
+    .toolbar .picker-button,.weui-cells_radio .weui-check:checked+.weui-icon-checked:before{
+        color: #3366CC;
+    }
+ </style>
+ <body>
+    <div class="weui-flex">
+        <div class="weui-flex__item">
+            <input class="weui-input" id="room" type="text" value="户型" readonly>
+        </div>
+        <div class="weui-flex__item">
+            <input class="weui-input" id="decorate" type="text" value="装修" readonly>
+        </div>
+        <div class="weui-flex__item">
+            <input class="weui-input" id="furniture" type="text" value="家具" readonly>
+        </div>
+    </div>
+    <div class="weui-panel weui-panel_access">
+        <div class="weui-panel__hd">房间列表</div>
+        <div class="weui-panel__bd" id="list">
+            <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+                <div class="weui-media-box__hd">
+                    <img class="weui-media-box__thumb" src="./img/house1.jpg" alt="">
+                </div>
+                <div class="weui-media-box__bd">
+                    <h4 class="weui-media-box__title">朋友合租性价比高</h4>
+                    <p class="weui-media-box__desc">两房两厅</p>
+                    <p class="weui-media-box__desc">精装修，带家具</p>
+                </div>
+            </a>
+            <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+                <div class="weui-media-box__hd">
+                    <img class="weui-media-box__thumb" src="./img/house10.jpg" alt="">
+                </div>
+                <div class="weui-media-box__bd">
+                    <h4 class="weui-media-box__title">单身起居大空间</h4>
+                    <p class="weui-media-box__desc">一房两厅</p>
+                    <p class="weui-media-box__desc">精装修，带家具</p>
+                </div>
+            </a>
+            <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+                <div class="weui-media-box__hd">
+                    <img class="weui-media-box__thumb" src="./img/house11.jpg" alt="">
+                </div>
+                <div class="weui-media-box__bd">
+                    <h4 class="weui-media-box__title">空间自由摆设</h4>
+                    <p class="weui-media-box__desc">两房两厅</p>
+                    <p class="weui-media-box__desc">无装修，无家具</p>
+                </div>
+            </a>
+            <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+                <div class="weui-media-box__hd">
+                    <img class="weui-media-box__thumb" src="./img/house2.jpg" alt="">
+                </div>
+                <div class="weui-media-box__bd">
+                    <h4 class="weui-media-box__title">朋友合租性价比高</h4>
+                    <p class="weui-media-box__desc">两房两厅</p>
+                    <p class="weui-media-box__desc">精装修，带家具</p>
+                </div>
+            </a>
+            <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+                <div class="weui-media-box__hd">
+                    <img class="weui-media-box__thumb" src="./img/house3.jpg" alt="">
+                </div>
+                <div class="weui-media-box__bd">
+                    <h4 class="weui-media-box__title">单身高性价比</h4>
+                    <p class="weui-media-box__desc">一房两厅</p>
+                    <p class="weui-media-box__desc">无装修，无家具</p>
+                </div>
+            </a>
+            <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+                <div class="weui-media-box__hd">
+                    <img class="weui-media-box__thumb" src="./img/house4.jpg" alt="">
+                </div>
+                <div class="weui-media-box__bd">
+                    <h4 class="weui-media-box__title">单身起居大空间</h4>
+                    <p class="weui-media-box__desc">一房两厅</p>
+                    <p class="weui-media-box__desc">精装修，带家具</p>
+                </div>
+            </a>
+            
+        </div>
+    </div>
+    <div class="weui-loadmore">
+        <i class="weui-loading"></i>
+        <span class="weui-loadmore__tips">正在加载</span>
+    </div>
+
+
+    <script src="./js/jquery-3.2.1.min.js"></script>
+    <script src="./js/jquery-weui.min.js"></script>
+    <script>
+        $("#room").select({
+            title: "户型类型",
+            items: [
+                {
+                title: "所有户型",
+                value: "all",
+                },
+                {
+                title: "两房两厅",
+                value: "2_2",
+                },
+                {
+                title: "一房两厅",
+                value: "1_2",
+                }
+            ]
+        });
+        $("#decorate").select({
+            title: "装修类型",
+            items: [
+                {
+                title: "所有装修",
+                value: "all",
+                },
+                {
+                title: "精装修",
+                value: "1",
+                },
+                {
+                title: "无装修",
+                value: "0",
+                }
+            ]
+        });
+        $("#furniture").select({
+            title: "家具类型",
+            items: [
+                {
+                title: "所有家具",
+                value: "all",
+                },
+                {
+                title: "带家具",
+                value: "1",
+                },
+                {
+                title: "无家具",
+                value: "0",
+                }
+            ]
+        });
+        $(function(){
+            $(document.body).infinite();//触发加载距离 单位px 
+        });
+        var loading = false;  //状态标记
+        $(document.body).infinite().on("infinite", function() {
+            if(loading) return;
+            loading = true;
+            setTimeout(function() {
+                $("#list").append(
+                    '<a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">'+
+                        '<div class="weui-media-box__hd">'+
+                            '<img class="weui-media-box__thumb" src="./img/house4.jpg" alt="">'+
+                        '</div>'+
+                        '<div class="weui-media-box__bd">'+
+                            '<h4 class="weui-media-box__title">单身起居大空间</h4>'+
+                            '<p class="weui-media-box__desc">一房两厅</p>'+
+                            '<p class="weui-media-box__desc">精装修，带家具</p>'+
+                        '</div>'+
+                    '</a>'
+                );
+                loading = false;
+            }, 1000);   //模拟延迟
+            // $(document.body).destroyInfinite()//销毁触发
+        });
+    </script>
+ </body>
+ </html>
