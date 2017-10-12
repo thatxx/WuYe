@@ -92,13 +92,13 @@
                 </div>
             <div class="weui-cell__bd weui-flex">
                 <input class="weui-flex__item" type="radio" id="count1" name="count" onclick="getSum(this.value)" value="1">
-                <label name="count1" class="weui-flex__item radio-checked" for="count1">1</label>
+                <label name="count1" class="label-radio weui-flex__item radio-checked" for="count1">1</label>
                 <input class="weui-flex__item" type="radio" id="count2" name="count" onclick="getSum(this.value)" value="2">
-                <label name="count2" class="weui-flex__item" for="count2">2</label>
+                <label name="count2" class="label-radio weui-flex__item" for="count2">2</label>
                 <input class="weui-flex__item" type="radio" id="count3" name="count" onclick="getSum(this.value)" value="3">
-                <label name="count3" class="weui-flex__item" for="count3">3</label>
+                <label name="count3" class="label-radio weui-flex__item" for="count3">3</label>
                 <input class="weui-flex__item" type="radio" id="count-more" name="count">
-                <input class="weui-input weui-flex__item" name="count-more" type="number" for="count-more" pattern="[0-9]*" placeholder="更多" onfocus="this.placeholder=''" onblur="this.placeholder='更多'" oninput="getSum(this.value)">
+                <input class="label-radio weui-input weui-flex__item" name="count-more" type="number" for="count-more" pattern="[0-9]*" min="4" max="12" placeholder="更多" onfocus="this.placeholder=''" onblur="this.placeholder='更多'" oninput="getSum(this.value)">
             </div>
         </div>
 
@@ -111,6 +111,15 @@
             </div>
         </div>
 
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <label class="weui-label"><i class="fa fa-mobile fa-fw" aria-hidden="true"></i> 手机号</label>
+            </div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" type="tel" placeholder="请输入手机号">
+            </div>
+        </div>
+
         <div class="weui-cells__title">备注</div>
         <div class="weui-cells weui-cells_form">
           <div class="weui-cell">
@@ -120,15 +129,8 @@
             </div>
           </div>
         </div>
-        <div class="weui-cell">
-        <div class="weui-cell__hd">
-            <label class="weui-label"><i class="fa fa-mobile fa-fw" aria-hidden="true"></i> 手机号</label>
-        </div>
-        <div class="weui-cell__bd">
-            <input class="weui-input" type="tel" placeholder="请输入手机号">
-        </div>
-        </div>
-        <div class="weui-cells__tips">有特殊情况请留言备注</div>
+
+
      </div>
 
      <div class="button-area">
@@ -154,15 +156,22 @@
          }
          function getSum(count){
             m = count;
-            price = ((count||1)*180).toFixed(2);
+            price = ((count||0)*180).toFixed(2);
             $("#costSum").val(price);
          }
          $(function(){
-             $('label[class="weui-flex__item"],input[class="weui-input weui-flex__item"]').click(function(){
-                $('label[class="weui-flex__item radio-checked"],input[class="weui-input weui-flex__item radio-checked"]').each(function(){
+             $('.label-radio').click(function(){
+                $('.label-radio').each(function(){
                     $(this).removeClass('radio-checked');
                 });
                  $(this).addClass('radio-checked');
+             });
+             $('input[name="count-more"]').blur(function(){
+                 var v = $(this).val();
+                 if(v==''){
+                    $(this).val(0);
+                    getSum(0);
+                 }
              });
          });
      </script>
