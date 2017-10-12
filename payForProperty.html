@@ -29,11 +29,12 @@
         margin-left: 3vw;
         margin-right: 3vw;
         margin-top: -12vh;
+        min-height: 60vh;
         padding: 2px 0 2px 0;
         background-color: #fff;
         box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+        border-radius: 3%;
         z-index: 1;
-        min-height: 50vh;
     }
     .fa{
         color: #666;
@@ -81,8 +82,9 @@
             <div class="weui-cell__hd">
                 <label class="weui-label"><i class="fa fa-home fa-fw" aria-hidden="true"></i> 住户单元</label>
                 </div>
-        <div class="weui-cell__bd">
-            <input class="weui-input" type="number" pattern="[0-9]*" placeholder="请输入住户单元号">
+        <div class="weui-cell__bd weui-flex">
+            <input class="weui-input weui-flex__item" type="number" pattern="[0-9]*" placeholder="楼栋号">栋
+            <input class="weui-input weui-flex__item" type="number" pattern="[0-9]*" placeholder="房间号">房
         </div>
         </div>
         
@@ -93,10 +95,10 @@
             <div class="weui-cell__bd weui-flex">
                 <input class="weui-flex__item" type="radio" id="count1" name="count" onclick="getSum(this.value)" value="1">
                 <label name="count1" class="label-radio weui-flex__item radio-checked" for="count1">1</label>
-                <input class="weui-flex__item" type="radio" id="count2" name="count" onclick="getSum(this.value)" value="2">
-                <label name="count2" class="label-radio weui-flex__item" for="count2">2</label>
-                <input class="weui-flex__item" type="radio" id="count3" name="count" onclick="getSum(this.value)" value="3">
-                <label name="count3" class="label-radio weui-flex__item" for="count3">3</label>
+                <input class="weui-flex__item" type="radio" id="count2" name="count" onclick="getSum(this.value)" value="3">
+                <label name="count2" class="label-radio weui-flex__item" for="count2">3</label>
+                <input class="weui-flex__item" type="radio" id="count3" name="count" onclick="getSum(this.value)" value="6">
+                <label name="count3" class="label-radio weui-flex__item" for="count3">6</label>
                 <input class="weui-flex__item" type="radio" id="count-more" name="count">
                 <input class="label-radio weui-input weui-flex__item" name="count-more" type="number" for="count-more" pattern="[0-9]*" min="4" max="12" placeholder="更多" onfocus="this.placeholder=''" onblur="this.placeholder='更多'" oninput="getSum(this.value)">
             </div>
@@ -129,7 +131,9 @@
             </div>
           </div>
         </div>
-
+        <div class="weui-footer" style="margin-top:3vh;">
+            <p class="weui-footer__text">Copyright © 20013-2020 宏骏物业</p>
+        </div>
 
      </div>
 
