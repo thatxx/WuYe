@@ -52,13 +52,14 @@
         text-align : center;
         border-radius: 5%;
     }
-    .weui-cell__bd.weui-flex  .weui-flex__item:hover{
+    /* .weui-cell__bd.weui-flex  .weui-flex__item:hover{
+        background-color: #3366CC;
+        color: #f8f8f8;
+    } */
+    .radio-checked{
         background-color: #3366CC;
         color: #f8f8f8;
     }
-    /* .radio-checked{
-        background-color: #3366CC;
-    } */
     .btn_pay{
         color: #3366CC;
         border: 1px solid #3366CC;
@@ -67,6 +68,9 @@
         color: #fff!important;
         background-color: #3366CC;
         border-color : #3366CC!important;
+    }
+    .weui-dialog__btn{
+        color: #3366CC;
     }
 </style>
 <body>
@@ -128,17 +132,39 @@
      </div>
 
      <div class="button-area">
-            <a href="javascript:;" class="weui-btn weui-btn_plain-primary btn_pay">确认支付</a>            
+            <a href="javascript:submit();" class="weui-btn weui-btn_plain-primary btn_pay">确认支付</a>            
      </div>
 
 
      <script src="./js/jquery-3.2.1.min.js"></script>
      <script src="./js/jquery-weui.min.js"></script>
      <script>
-         var price = 180;
-         function getSum(count){
-            $("#costSum").val((count||1)*180);
+         price = 180;
+         m = 1;
+         function submit(){
+            $.confirm({
+                title: '￥'+price,
+                text: '确定支付'+m+'个月的管理费？',
+                onOK: function () {
+                    //点击确认
+                },
+                onCancel: function () {
+                }
+            });
          }
+         function getSum(count){
+            m = count;
+            price = ((count||1)*180).toFixed(2);
+            $("#costSum").val(price);
+         }
+         $(function(){
+             $('label[class="weui-flex__item"],input[class="weui-input weui-flex__item"]').click(function(){
+                $('label[class="weui-flex__item radio-checked"],input[class="weui-input weui-flex__item radio-checked"]').each(function(){
+                    $(this).removeClass('radio-checked');
+                });
+                 $(this).addClass('radio-checked');
+             });
+         });
      </script>
 </body>
 </html>
