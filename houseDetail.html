@@ -14,22 +14,11 @@
      <link rel="stylesheet" href="./css/font-awesome.min.css">
      <link rel="stylesheet" href="./css/jquery-weui.min.css">
      <link rel="stylesheet" href="./css/weui.min.css">
-     <title>房间列表</title>
+     <title>房间详情</title>
  </head>
  <style>
      body{
          background-color: #fff;
-     }
-     .page-bd{
-         margin-left: 3vw;
-         margin-right: 3vw;
-         margin-top: -12vh;
-         min-height: 60vh;
-         padding: 2px 0 2px 0;
-         background-color: #fff;
-         box-shadow: 0 1px 1px rgba(0,0,0,0.2);
-         border-radius: 3%;
-         z-index: 1;
      }
      .fa{
          color: #666;
@@ -57,139 +46,49 @@
     .toolbar .picker-button,.weui-cells_radio .weui-check:checked+.weui-icon-checked:before{
         color: #3366CC;
     }
+    .weui-media-box img{
+        width: 100%;
+        height: auto;
+        max-width: 100%; 
+        display: block;
+        margin: 1vh 0 1vh 0 ;
+    }
  </style>
  <body>
-    <div class="weui-flex">
-        <div class="weui-flex__item">
-            <input class="weui-input" id="room" type="text" value="户型" readonly>
-        </div>
-        <div class="weui-flex__item">
-            <input class="weui-input" id="decorate" type="text" value="装修" readonly>
-        </div>
-        <div class="weui-flex__item">
-            <input class="weui-input" id="furniture" type="text" value="家具" readonly>
-        </div>
-    </div>
     <div class="weui-panel weui-panel_access">
-        <div class="weui-panel__hd">房间列表</div>
+        <div class="weui-panel__hd">房间详情</div>
+
         <div class="weui-panel__bd">
-            <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
-                <div class="weui-media-box__hd">
-                    <img class="weui-media-box__thumb" src="./img/house1.jpg" alt="">
-                </div>
-                <div class="weui-media-box__bd">
-                    <h4 class="weui-media-box__title">朋友合租性价比高</h4>
-                    <p class="weui-media-box__desc">两房两厅</p>
-                    <p class="weui-media-box__desc">精装修，带家具</p>
-                </div>
-            </a>
-            <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
-                <div class="weui-media-box__hd">
-                    <img class="weui-media-box__thumb" src="./img/house10.jpg" alt="">
-                </div>
-                <div class="weui-media-box__bd">
-                    <h4 class="weui-media-box__title">单身起居大空间</h4>
-                    <p class="weui-media-box__desc">一房两厅</p>
-                    <p class="weui-media-box__desc">精装修，带家具</p>
-                </div>
-            </a>
-            <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
-                <div class="weui-media-box__hd">
-                    <img class="weui-media-box__thumb" src="./img/house11.jpg" alt="">
-                </div>
-                <div class="weui-media-box__bd">
-                    <h4 class="weui-media-box__title">空间自由摆设</h4>
-                    <p class="weui-media-box__desc">两房两厅</p>
-                    <p class="weui-media-box__desc">无装修，无家具</p>
-                </div>
-            </a>
-            <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
-                <div class="weui-media-box__hd">
-                    <img class="weui-media-box__thumb" src="./img/house2.jpg" alt="">
-                </div>
-                <div class="weui-media-box__bd">
-                    <h4 class="weui-media-box__title">朋友合租性价比高</h4>
-                    <p class="weui-media-box__desc">两房两厅</p>
-                    <p class="weui-media-box__desc">精装修，带家具</p>
-                </div>
-            </a>
-            <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
-                <div class="weui-media-box__hd">
-                    <img class="weui-media-box__thumb" src="./img/house3.jpg" alt="">
-                </div>
-                <div class="weui-media-box__bd">
-                    <h4 class="weui-media-box__title">单身高性价比</h4>
-                    <p class="weui-media-box__desc">一房两厅</p>
-                    <p class="weui-media-box__desc">无装修，无家具</p>
-                </div>
-            </a>
-            <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
-                <div class="weui-media-box__hd">
-                    <img class="weui-media-box__thumb" src="./img/house4.jpg" alt="">
-                </div>
-                <div class="weui-media-box__bd">
-                    <h4 class="weui-media-box__title">单身起居大空间</h4>
-                    <p class="weui-media-box__desc">一房两厅</p>
-                    <p class="weui-media-box__desc">精装修，带家具</p>
-                </div>
-            </a>
+            <div class="weui-media-box weui-media-box_text">
+                <h4 class="weui-media-box__title">房号</h4>
+                <p class="weui-media-box__desc">2栋511</p>
+            </div>
+            <div class="weui-media-box weui-media-box_text">
+                <h4 class="weui-media-box__title">户型</h4>
+                <p class="weui-media-box__desc">两房两厅</p>
+            </div>
+            <div class="weui-media-box weui-media-box_text">
+                <h4 class="weui-media-box__title">房屋情况</h4>
+                <p class="weui-media-box__desc">精装修，带家具</p>
+            </div>
+            <div class="weui-media-box weui-media-box_text" id="list">
+                <h4 class="weui-media-box__title">图文详情</h4>
+                <p class="weui-media-box__desc">房间朝南，光照良好，适合平时在窗边办公写作</p>
+                <img src="./img/banner.png" alt="">
+                <p class="weui-media-box__desc">卧室墙壁带有小置物架，粉刷了蓝色使人心情放松愉悦</p>
+                <img src="./img/house10.jpg" alt="">
+                <p class="weui-media-box__desc">厨房设施齐全</p>
+                <img src="./img/house2.jpg" alt="">
+                <p class="weui-media-box__desc">卫生间干净明亮</p>
+                <img src="./img/house8.jpg" alt="">
+            </div>
         </div>
     </div>
  
     <script src="./js/jquery-3.2.1.min.js"></script>
     <script src="./js/jquery-weui.min.js"></script>
     <script>
-        $("#room").select({
-            title: "户型",
-            items: [
-                {
-                title: "所有户型",
-                value: "all",
-                },
-                {
-                title: "两房两厅",
-                value: "2_2",
-                },
-                {
-                title: "一房两厅",
-                value: "1_2",
-                }
-            ]
-        });
-        $("#decorate").select({
-            title: "装修类型",
-            items: [
-                {
-                title: "所有装修",
-                value: "all",
-                },
-                {
-                title: "精装修",
-                value: "1",
-                },
-                {
-                title: "无装修",
-                value: "0",
-                }
-            ]
-        });
-        $("#furniture").select({
-            title: "家具类型",
-            items: [
-                {
-                title: "所有家具",
-                value: "all",
-                },
-                {
-                title: "带家具",
-                value: "1",
-                },
-                {
-                title: "无家具",
-                value: "0",
-                }
-            ]
-        });
+
     </script>
  </body>
  </html>
