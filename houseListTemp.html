@@ -105,7 +105,7 @@
         <i class="weui-loading"></i>
         <span class="weui-loadmore__tips">正在加载</span>
     </div> -->
-    <div class="weui-footer " style="margin-top: 46vh;">
+    <div class="weui-footer " style="margin-top: 38vh;">
         <p class="weui-footer__text">Copyright © 2016-2020 宏骏物业</p>
     </div>
 
@@ -163,30 +163,7 @@
                 }
             ]
         });
-        // $(function(){
-        //     $(document.body).infinite();//触发加载距离 单位px 
-        // });
-        var loading = false;  //状态标记
-        $(document.body).infinite().on("infinite", function() {
-            if(loading) return;
-            loading = true;
-            setTimeout(function() {
-                $("#list").append(
-                    '<a href="./houseDetail.html" class="weui-media-box weui-media-box_appmsg">'+
-                        '<div class="weui-media-box__hd">'+
-                            '<img class="weui-media-box__thumb" src="./img/house4.jpg" alt="">'+
-                        '</div>'+
-                        '<div class="weui-media-box__bd">'+
-                            '<h4 class="weui-media-box__title">单身起居大空间</h4>'+
-                            '<p class="weui-media-box__desc">一房两厅</p>'+
-                            '<p class="weui-media-box__desc">精装修，带家具</p>'+
-                        '</div>'+
-                    '</a>'
-                );
-                loading = false;
-            }, 1000);   //模拟延迟
-            // $(document.body).destroyInfinite()//销毁触发
-        });
+  
     </script>
  </body>
  </html>
