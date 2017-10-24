@@ -163,9 +163,9 @@
                 }
             ]
         });
-        $(function(){
-            $(document.body).infinite();//触发加载距离 单位px 
-        });
+        // $(function(){
+        //     $(document.body).infinite();//触发加载距离 单位px 
+        // });
         var loading = false;  //状态标记
         $(document.body).infinite().on("infinite", function() {
             if(loading) return;
